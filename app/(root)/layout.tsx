@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
-export default function RootLayout({
+export default function LandingLayout({
   children,
 }: {
   children: React.ReactNode;

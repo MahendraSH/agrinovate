@@ -8,6 +8,7 @@ import Logo from "./ui/logo";
 import { LucideMenu } from "lucide-react";
 import { Button } from "./ui/button";
 import NavLits from "./nav-links";
+import { UserButton } from "@clerk/nextjs";
 
 interface NavbarProps {}
 
@@ -34,7 +35,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         <div className="hidden md:flex  ">
           <div className="menu menu-horizontal px-1 gap-x-3  ">
             <NavLits isSidbar={false} />
-            {/* <UserButton signInUrl="/" /> */}
+            <UserButton signInUrl="/" />
             <div className="mx-2">
               <ModeToggle />
             </div>
@@ -42,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         </div>
         <div className="flex md:hidden   ">
           <div className="menu menu-horizontal px-1 gap-x-2 ">
-            {/* <UserButton signInUrl="/" /> */}
+            <UserButton signInUrl="/" />
             <ModeToggle />
           </div>
         </div>

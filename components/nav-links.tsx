@@ -11,13 +11,17 @@ interface NavLinksProps {
 
 const NavRoutes = [
   {
+    href: "/",
+    label: "home",
+  },
+  {
     href: "/about",
     label: "About",
   },
 
   {
     href: "/contact",
-    label: "Contact us",
+    label: "conatact",
   },
 ];
 

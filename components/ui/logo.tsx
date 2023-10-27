@@ -11,7 +11,7 @@ const Logo: FC<LogoProps> = ({}) => {
     <Link href={"/"}>
       <Button
         variant={"default"}
-        className=" bg-background hover:bg-background  text-slate-50  normal-case text-xl"
+        className=" bg-background hover:bg-background text-secondary-foreground  normal-case text-xl  shadow-none"
       >
         <Image
           src={"/logo-dark.png"}

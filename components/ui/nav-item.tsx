@@ -15,15 +15,21 @@ interface NavItemProps {
 const NavItem: FC<NavItemProps> = ({ isSidbar, label, href }) => {
   const router = useRouter();
   const pathname = usePathname();
-  if (isSidbar == false) {
+
+  const isActive =
+    (pathname === "/" && href === "/") ||
+    pathname === href ||
+    pathname?.startsWith(`${href}/`);
+
+  if (isSidbar == false && label !== "home") {
     return (
-      <Button variant={"ghost"}>
+      <Button variant={"ghost"}  className={cn( isActive && " text-primary")}>
         <Link href={href}>{label}</Link>
       </Button>
     );
-  } else {
+  } else if (isSidbar === true) {
     return (
-      <Button variant={"ghost"}>
+      <Button variant={"ghost"} className={cn(isActive && "text-primary")}>
         <label
           htmlFor="my-drawer-4"
           className="drawer-button"
@@ -31,8 +37,16 @@ const NavItem: FC<NavItemProps> = ({ isSidbar, label, href }) => {
         >
           {label}
         </label>
+        <div
+          className={cn(
+            "ml-auto opacity-0 border-2 border-primary  h-full  transition-all ",
+            isActive && "opacity-100 "
+          )}
+        />
       </Button>
     );
+  } else {
+    return;
   }
 };
 
