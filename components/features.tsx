@@ -24,7 +24,7 @@ const Features: FC<FeaturesProps> = ({}) => {
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-muted-foreground text-lg title-font font-medium mb-2">
-                Shooting Stars
+                Crop Recommendation
               </h2>
               <p className="leading-relaxed text-base">
                 Blue bottle crucifix vinyl post-ironic four dollar toast vegan
@@ -39,7 +39,7 @@ const Features: FC<FeaturesProps> = ({}) => {
           <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10  border-gray-700 dark:border-gray-200 sm:flex-row flex-col">
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-muted-foreground text-lg title-font font-medium mb-2">
-                The Catalyzer
+                Fertilizer Recommendation
               </h2>
               <p className="leading-relaxed text-base">
                 Blue bottle crucifix vinyl post-ironic four dollar toast vegan
@@ -83,7 +83,7 @@ const Features: FC<FeaturesProps> = ({}) => {
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-muted-foreground text-lg title-font font-medium mb-2">
-                The 400 Blows
+                Plant Disease Prediction
               </h2>
               <p className="leading-relaxed text-base">
                 Blue bottle crucifix vinyl post-ironic four dollar toast vegan
