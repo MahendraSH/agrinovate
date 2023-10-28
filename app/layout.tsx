@@ -55,7 +55,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main>{children}</main>
+            <main className="bg-background">{children}</main>
           </ThemeProvider>
         </ClerkProvider>
       </body>
