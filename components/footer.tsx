@@ -8,7 +8,7 @@ interface FooterProps {}
 const Footer: FC<FooterProps> = ({}) => {
   return (
     <>
-      <footer className="footer footer-center p-10 bg-background shadow-sm border-t-2   rounded flex flex-col">
+      <footer className="footer footer-center p-10 bg-background shadow-sm    rounded flex flex-col">
         <nav className="flex ">
           <NavLinks isSidbar={false} />
         </nav>
