@@ -3,10 +3,20 @@ import Link from "next/link";
 import { FC } from "react";
 import { Button } from "./ui/button";
 import { ArrowDown, ArrowDown01, ArrowRight, MoveDown } from "lucide-react";
+import {
+  ClerkLoaded,
+  ClerkLoading,
+  SignIn,
+  SignInButton,
+  auth,
+} from "@clerk/nextjs";
+import LoaderSpiner from "./ui/loader-spiner";
 
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
+  const { userId } = auth();
+  const isAuth = userId ? true : false;
   return (
     <>
       <section className=" min-h-screen  flex flex-col justify-center items-center">
@@ -14,23 +24,42 @@ const Hero: FC<HeroProps> = ({}) => {
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium  bg-clip-text text-transparent bg-gradient-to-l from-slate-400 to-primary ">
               {" "}
-              
-              {siteConfig.description }
+              {siteConfig.description}
             </h1>
             <p className="mb-8 leading-relaxed  text-lg">
-              Discover AI and Farming  Solutions   to help  farmers in there  work 
+              Discover AI and Farming Solutions to help farmers in there work
             </p>
-            <div className="flex justify-center mx-auto animate-bounce">
-              <Link
-                href="/#features"
-                className=""
-              >
-                <Button variant={"ghost" } size={"icon"}>
+            <ClerkLoading
+              children={
+                <div className="flex justify-center mx-auto ">
+                  <LoaderSpiner />
+                </div>
+              }
+            />
+            <ClerkLoaded
+              children={
+                <>
+                  {!isAuth && (
+                    <div className="flex justify-center mx-auto ">
+                      <Button>
+                        {" "}
+                        <SignInButton children={"Get Started"} />{" "}
+                      </Button>
+                    </div>
+                  )}
 
-                <MoveDown className="w-8 h-8  "/>
-                </Button>
-              </Link>
-            </div>
+                  {isAuth && (
+                    <div className="flex justify-center mx-auto animate-bounce">
+                      <Link href="/#features" className="">
+                        <Button variant={"ghost"} size={"icon"}>
+                          <MoveDown className="w-8 h-8  " />
+                        </Button>
+                      </Link>
+                    </div>
+                  )}
+                </>
+              }
+            />
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 bg-background">
             <img

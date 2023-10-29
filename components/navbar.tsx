@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import { ModeToggle } from "./ui/mode-toggle";
 import { useScrollTop } from "@/hooks/use-sroll-top";
 import { cn } from "@/lib/utils";
@@ -8,11 +8,14 @@ import Logo from "./ui/logo";
 import { LucideMenu } from "lucide-react";
 import { Button } from "./ui/button";
 import NavLits from "./nav-links";
-import { UserButton } from "@clerk/nextjs";
+import { ClerkLoading, SignInButton, UserButton } from "@clerk/nextjs";
+import LoaderSpiner from "./ui/loader-spiner";
 
-interface NavbarProps {}
+interface NavbarProps {
+  isAuth: boolean;
+}
 
-const Navbar: FC<NavbarProps> = ({}) => {
+const Navbar: FC<NavbarProps> = ({ isAuth }) => {
   const scrolled = useScrollTop();
 
   return (
@@ -35,7 +38,21 @@ const Navbar: FC<NavbarProps> = ({}) => {
         <div className="hidden md:flex  ">
           <div className="menu menu-horizontal px-1 gap-x-3  ">
             <NavLits isSidbar={false} />
-            <UserButton signInUrl="/" />
+            <ClerkLoading
+              children={
+                <div className="my-auto">
+                  <LoaderSpiner size={"default"} />
+                </div>
+              }
+            />
+            {isAuth && <UserButton signInUrl="/" />}
+            {!isAuth && (
+              <>
+                <Button variant={"ghost"}>
+                  <SignInButton children= {"login"} />
+                </Button>
+              </>
+            )}
             <div className="mx-2">
               <ModeToggle />
             </div>
@@ -43,7 +60,14 @@ const Navbar: FC<NavbarProps> = ({}) => {
         </div>
         <div className="flex md:hidden   ">
           <div className="menu menu-horizontal px-1 gap-x-2 ">
-            <UserButton signInUrl="/" />
+            {isAuth && <UserButton signInUrl="/" />}
+            {!isAuth && (
+              <>
+                <Button variant={"ghost"}>
+                  <SignInButton  children={"login"}/>
+                </Button>
+              </>
+            )}
             <ModeToggle />
           </div>
         </div>

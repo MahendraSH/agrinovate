@@ -11,8 +11,13 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ["Agrinovate", "", "", ""],
-  creator: "Mahendra S H",
+  keywords: [
+    "Agrinovate",
+    "Plant Disease Prediction",
+    "Fertilizer Recommendation",
+    "Crop Recommendation",
+  ],
+  creator: "Agrinovate Team",
 
   authors: [
     {

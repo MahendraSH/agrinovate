@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import { Button } from "./ui/button";
 import { XIcon } from "lucide-react";
@@ -21,7 +19,7 @@ const NavRoutes = [
 
   {
     href: "/contact",
-    label: "conatact",
+    label: "contact",
   },
 ];
 
