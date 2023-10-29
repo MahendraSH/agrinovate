@@ -38,13 +38,11 @@ const Navbar: FC<NavbarProps> = ({ isAuth }) => {
         <div className="hidden md:flex  ">
           <div className="menu menu-horizontal px-1 gap-x-3  ">
             <NavLits isSidbar={false} />
-            <ClerkLoading
-              children={
-                <div className="my-auto">
-                  <LoaderSpiner size={"default"} />
-                </div>
-              }
-            />
+            <ClerkLoading>
+              <div className="my-auto">
+                <LoaderSpiner size={"default"} />
+              </div>
+            </ClerkLoading>
             {isAuth && <UserButton signInUrl="/" />}
             {!isAuth && (
               <>

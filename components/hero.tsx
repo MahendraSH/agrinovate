@@ -29,34 +29,32 @@ const Hero: FC<HeroProps> = ({}) => {
             <p className="mb-8 leading-relaxed  text-lg">
               Discover AI and Farming Solutions to help farmers in there work
             </p>
-            <ClerkLoading
-              children={
-                <div className="flex justify-center mx-auto ">
-                  <LoaderSpiner />
-                </div>
-              }
-            />
-            <ClerkLoaded
-              children={
-                <>
-                  {!isAuth && (
-                    <div className="flex justify-center mx-auto ">
+            <ClerkLoading>
+              <div className="flex justify-center mx-auto ">
+                <LoaderSpiner />
+              </div>
+            </ClerkLoading>
+            <ClerkLoaded>
+              <>
+                {!isAuth && (
+                  <div className="flex justify-center mx-auto  ">
+                    <span className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 m-1 p-1 ">
                       <SignInButton children={"Get Started"} />
-                    </div>
-                  )}
+                    </span>
+                  </div>
+                )}
 
-                  {isAuth && (
-                    <div className="flex justify-center mx-auto animate-bounce">
-                      <Link href="/#features" className="">
-                        <Button variant={"ghost"} size={"icon"}>
-                          <MoveDown className="w-8 h-8  " />
-                        </Button>
-                      </Link>
-                    </div>
-                  )}
-                </>
-              }
-            />
+                {isAuth && (
+                  <div className="flex justify-center mx-auto animate-bounce">
+                    <Link href="/#features" className="">
+                      <Button variant={"ghost"} size={"icon"}>
+                        <MoveDown className="w-8 h-8  " />
+                      </Button>
+                    </Link>
+                  </div>
+                )}
+              </>
+            </ClerkLoaded>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 bg-background">
             <img
