@@ -48,9 +48,7 @@ const Navbar: FC<NavbarProps> = ({ isAuth }) => {
             {isAuth && <UserButton signInUrl="/" />}
             {!isAuth && (
               <>
-                <Button variant={"ghost"}>
-                  <SignInButton children= {"login"} />
-                </Button>
+                <SignInButton children={"login"} />
               </>
             )}
             <div className="mx-2">
@@ -63,9 +61,7 @@ const Navbar: FC<NavbarProps> = ({ isAuth }) => {
             {isAuth && <UserButton signInUrl="/" />}
             {!isAuth && (
               <>
-                <Button variant={"ghost"}>
-                  <SignInButton  children={"login"}/>
-                </Button>
+                <SignInButton children={"login"} />
               </>
             )}
             <ModeToggle />

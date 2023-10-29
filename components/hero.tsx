@@ -41,10 +41,7 @@ const Hero: FC<HeroProps> = ({}) => {
                 <>
                   {!isAuth && (
                     <div className="flex justify-center mx-auto ">
-                      <Button>
-                        {" "}
-                        <SignInButton children={"Get Started"} />{" "}
-                      </Button>
+                      <SignInButton children={"Get Started"} />
                     </div>
                   )}
 
