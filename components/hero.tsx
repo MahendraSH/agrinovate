@@ -11,6 +11,7 @@ import {
   auth,
 } from "@clerk/nextjs";
 import LoaderSpiner from "./ui/loader-spiner";
+import Image from "next/image";
 
 interface HeroProps {}
 
@@ -38,8 +39,8 @@ const Hero: FC<HeroProps> = ({}) => {
               <>
                 {!isAuth && (
                   <div className="flex justify-center mx-auto  ">
-                    <span className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 m-1 p-1 ">
-                      <SignInButton children={"Get Started"} />
+                    <span className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 m-1 p-1 \">
+                      <SignInButton> Get Started </SignInButton>
                     </span>
                   </div>
                 )}
@@ -57,14 +58,14 @@ const Hero: FC<HeroProps> = ({}) => {
             </ClerkLoaded>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 bg-background">
-            <img
+            <Image
               className="object-cover object-center rounded dark:hidden "
               alt="hero"
               src="/imgLanding/ai-farmer.png"
               width={720}
               height={600}
             />
-            <img
+            <Image
               className="object-cover object-center rounded hidden dark:block"
               alt="hero"
               src="/imgLanding/ai-farmer-dark.png"
