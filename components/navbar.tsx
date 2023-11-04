@@ -56,10 +56,15 @@ const Navbar: FC<NavbarProps> = ({ isAuth }) => {
         </div>
         <div className="flex md:hidden   ">
           <div className="menu menu-horizontal px-1 gap-x-2 ">
+            <ClerkLoading>
+              <div className="my-auto">
+                <LoaderSpiner size={"sm"} />
+              </div>
+            </ClerkLoading>
             {isAuth && <UserButton signInUrl="/" />}
             {!isAuth && (
               <>
-                <SignInButton  > login </SignInButton>
+                <SignInButton> login </SignInButton>
               </>
             )}
             <ModeToggle />
