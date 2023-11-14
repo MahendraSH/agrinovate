@@ -7,18 +7,21 @@ interface FeaturesProps {}
 
 const features = [
   {
+    id: 1,
     label: "Crop Recommendation",
     herf: "/sys/CropRecommendation.webp",
     description:
       " Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus asperiores autem esse beatae incidunt nesciunt ea nemo earum iusto exercitationem.z",
   },
   {
+    id: 2,
     label: "Fertilizer Recommendation",
     herf: "/sys/FertilizerRecommendation.jpg",
     description:
       " Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus asperiores autem esse beatae incidunt nesciunt ea nemo earum iusto exercitationem.z",
   },
   {
+    id: 3,
     label: "Plant Disease Prediction",
     herf: "/sys/PlantDisease.webp",
     description:
@@ -36,7 +39,8 @@ const Features: FC<FeaturesProps> = ({}) => {
               label={item.label}
               description={item.description}
               herf={item.herf}
-              key={item.label}
+              key={item.id}
+              index={item.id}
             />
           ))}
         </div>
