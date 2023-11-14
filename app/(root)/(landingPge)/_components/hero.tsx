@@ -1,7 +1,7 @@
 import { siteConfig } from "@/lib/config/site-config";
 import Link from "next/link";
 import { FC } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../../../../components/ui/button";
 import { ArrowDown, ArrowDown01, ArrowRight, MoveDown } from "lucide-react";
 import {
   ClerkLoaded,
@@ -10,7 +10,7 @@ import {
   SignInButton,
   auth,
 } from "@clerk/nextjs";
-import LoaderSpiner from "./ui/loader-spiner";
+import LoaderSpiner from "../../../../components/ui/loader-spiner";
 import Image from "next/image";
 
 interface HeroProps {}
@@ -39,7 +39,7 @@ const Hero: FC<HeroProps> = ({}) => {
               <>
                 {!isAuth && (
                   <div className="flex justify-center mx-auto  ">
-                    <span className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 m-1 p-1 \">
+                    <span className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90  h-9 px-4 py-2 \">
                       <SignInButton> Get Started </SignInButton>
                     </span>
                   </div>

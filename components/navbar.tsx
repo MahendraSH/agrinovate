@@ -43,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({ isAuth }) => {
                 <LoaderSpiner size={"default"} />
               </div>
             </ClerkLoading>
-            {isAuth && <UserButton signInUrl="/" />}
+            {isAuth && <UserButton afterSignOutUrl="/" />}
             {!isAuth && (
               <>
                 <SignInButton> login</SignInButton>
@@ -61,7 +61,7 @@ const Navbar: FC<NavbarProps> = ({ isAuth }) => {
                 <LoaderSpiner size={"sm"} />
               </div>
             </ClerkLoading>
-            {isAuth && <UserButton signInUrl="/" />}
+            {isAuth && <UserButton afterSignOutUrl="/" />}
             {!isAuth && (
               <>
                 <SignInButton> login </SignInButton>
