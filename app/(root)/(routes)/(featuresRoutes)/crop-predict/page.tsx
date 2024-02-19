@@ -228,7 +228,6 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
                         )}
                       />
                       <FormField
-                        disabled
                         control={form.control}
                         name="country"
                         render={({ field }) => (
