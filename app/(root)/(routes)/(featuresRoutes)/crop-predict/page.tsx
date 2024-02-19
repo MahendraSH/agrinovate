@@ -239,7 +239,6 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
                               onValueChange={(value) =>
                                 setSelectedCountry(value)
                               }
-                              disabled
                             >
                               <FormControl>
                                 <SelectTrigger>
