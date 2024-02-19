@@ -29,6 +29,7 @@ import { useMutation as UseMutation } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Skeleton } from "@/components/ui/skeleton";
+import ResultCard from "@/components/resultCard";
 const formSchema = z.object({
   cropname: z.string().min(3),
   nitrogen: z.coerce.number().min(10).max(200),
@@ -89,7 +90,7 @@ const FertilizerPredictionPage: FC<FertilizerPredictionPageProps> = ({}) => {
       ) : (
         <>
           {mutation.isSuccess ? (
-            <> {JSON.stringify(mutation.data.data)} </>
+            <ResultCard data={mutation.data.data?.Recommendation} />
           ) : (
             <>
               <div className=" flex justify-center items-center  h-full w-full  my-16  ">
