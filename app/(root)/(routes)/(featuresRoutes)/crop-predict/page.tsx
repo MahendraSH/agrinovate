@@ -85,7 +85,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     mutation.mutate(values);
-    console.log(values)
+    console.log(values);
 
     if (mutation.isError) {
       toast.error(`${features[1].label} , Something went wrong !`);
@@ -228,6 +228,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
                         )}
                       />
                       <FormField
+                        disabled
                         control={form.control}
                         name="country"
                         render={({ field }) => (
@@ -238,6 +239,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
                               onValueChange={(value) =>
                                 setSelectedCountry(value)
                               }
+                              disabled
                             >
                               <FormControl>
                                 <SelectTrigger>
