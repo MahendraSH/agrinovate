@@ -1,33 +1,8 @@
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import { FC } from "react";
 import FeatureItem from "./feature-item";
+import { features } from "@/utils/features";
 
 interface FeaturesProps {}
-
-const features = [
-  {
-    id: 1,
-    label: "Crop Recommendation",
-    herf: "/sys/CropRecommendation.webp",
-    description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus asperiores autem esse beatae incidunt nesciunt ea nemo earum iusto exercitationem.z",
-  },
-  {
-    id: 2,
-    label: "Fertilizer Recommendation",
-    herf: "/sys/FertilizerRecommendation.jpg",
-    description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus asperiores autem esse beatae incidunt nesciunt ea nemo earum iusto exercitationem.z",
-  },
-  {
-    id: 3,
-    label: "Plant Disease Prediction",
-    herf: "/sys/PlantDisease.webp",
-    description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus asperiores autem esse beatae incidunt nesciunt ea nemo earum iusto exercitationem.z",
-  },
-];
 
 const Features: FC<FeaturesProps> = ({}) => {
   return (
@@ -41,6 +16,7 @@ const Features: FC<FeaturesProps> = ({}) => {
               herf={item.herf}
               key={item.id}
               index={item.id}
+              link={item.link}
             />
           ))}
         </div>
