@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { FC } from "react";
-import { useForm } from "react-hook-form";
+import { useForm as UseForm } from "react-hook-form";
 import { number, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { crops } from "@/utils/crops";
@@ -49,7 +49,7 @@ const page: FC<pageProps> = ({}) => {
   });
 
   // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = UseForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       cropname: "",
