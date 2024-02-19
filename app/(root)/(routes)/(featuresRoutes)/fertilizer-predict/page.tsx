@@ -90,7 +90,7 @@ const FertilizerPredictionPage: FC<FertilizerPredictionPageProps> = ({}) => {
       ) : (
         <>
           {mutation.isSuccess ? (
-            <ResultCard data={mutation.data.data?.Recommendation} />
+            <ResultCard data={mutation.data.data?.recommendation} />
           ) : (
             <>
               <div className=" flex justify-center items-center  h-full w-full  my-16  ">
