@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { ArrowRight, MoveRight } from "lucide-react";
 import Image from "next/image";
@@ -45,8 +46,10 @@ const FeatureItem: FC<FeatureItemProps> = ({
               href={link}
               className="mt-3 text-primary inline-flex items-center"
             >
-              Lets go
-              <MoveRight className="w-6 h-6 ml-2 " />
+              <Button variant={"underline"}>
+                Lets go
+                <MoveRight className="w-6 h-6 ml-2 " />
+              </Button>
             </Link>
           </div>
         </div>
@@ -64,8 +67,10 @@ const FeatureItem: FC<FeatureItemProps> = ({
               href={link}
               className="mt-3 text-primary inline-flex items-center"
             >
-              Lets go
-              <MoveRight className="w-6 h-6 ml-2 " />
+              <Button variant={"underline"}>
+                Lets go
+                <MoveRight className="w-6 h-6 ml-2 " />
+              </Button>
             </Link>
           </div>
           <div className="w-50 h-50   sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100  dark:bg-slate-500 text-primary/80 flex-shrink-0">
