@@ -13,7 +13,7 @@ export default function LandingLayout({
   return (
     <>
       <Navbar isAuth={isAuth} />
-      {children}
+      <main className=" mt-16  w-full h-full">{children}</main>
       <Sidebar />
 
       <Separator className="h-0.5 dark:bg-slate-400 bg-slate-800 " />

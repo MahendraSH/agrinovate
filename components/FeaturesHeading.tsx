@@ -26,7 +26,7 @@ const FeaturesHeading: FC<FeaturesHeadingProps> = ({
   children,
 }) => {
   return (
-    <div className=" w-full flex justify-center items-center my-16  ">
+    <div className=" w-full flex justify-center items-center my-16   ">
       <Card className="lg:max-w-3xl md:max-xl  max-w-full   w-full lg:px-16 px-4 py-10">
         <CardHeader>
           <CardTitle className=" font-semibold text-xl ">{label}</CardTitle>

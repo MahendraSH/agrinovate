@@ -36,9 +36,9 @@ const formSchema = z.object({
   pottasium: z.coerce.number().min(10).max(200),
 });
 
-interface pageProps {}
+interface FertilizerPredictionPageProps {}
 
-const page: FC<pageProps> = ({}) => {
+const FertilizerPredictionPage: FC<FertilizerPredictionPageProps> = ({}) => {
   const mutation = UseMutation({
     mutationFn: (values: z.infer<typeof formSchema>) => {
       return axios.post(
@@ -146,16 +146,16 @@ const page: FC<pageProps> = ({}) => {
                         name="pottasium"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>pottasium</FormLabel>
+                            <FormLabel>potassium</FormLabel>
                             <FormControl>
                               <Input
-                                placeholder="pottasium value"
+                                placeholder="potassium value"
                                 {...field}
                                 type="number"
                               />
                             </FormControl>
                             <FormDescription>
-                              pottasium content in soil in PPM (parts Per
+                              potassium content in soil in PPM (parts Per
                               Million)
                             </FormDescription>
                             <FormMessage />
@@ -203,4 +203,4 @@ const page: FC<pageProps> = ({}) => {
   );
 };
 
-export default page;
+export default FertilizerPredictionPage;

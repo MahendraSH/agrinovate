@@ -37,7 +37,7 @@ const FeatureItem: FC<FeatureItemProps> = ({
           </div>
           <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
             <Link href={link}>
-              <h2 className="text-muted-foreground text-lg title-font font-medium mb-2">
+              <h2 className="text-muted-foreground text-lg title-font font-medium mb-2 hover:underline">
                 {label}
               </h2>
             </Link>
@@ -46,7 +46,7 @@ const FeatureItem: FC<FeatureItemProps> = ({
               href={link}
               className="mt-3 text-primary inline-flex items-center"
             >
-              <Button variant={"underline"}>
+              <Button variant={"link"}>
                 Lets go
                 <MoveRight className="w-6 h-6 ml-2 " />
               </Button>
@@ -58,7 +58,7 @@ const FeatureItem: FC<FeatureItemProps> = ({
         <div className="flex items-center lg:w-4/6 mx-auto border-b pb-10 mb-10 border-gray-700 dark:border-gray-200 sm:flex-row flex-col">
           <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
             <Link href={link}>
-              <h2 className="text-muted-foreground text-lg title-font font-medium mb-2">
+              <h2 className="text-muted-foreground text-lg title-font font-medium mb-2 hover:underline">
                 {label}
               </h2>
             </Link>
@@ -67,7 +67,7 @@ const FeatureItem: FC<FeatureItemProps> = ({
               href={link}
               className="mt-3 text-primary inline-flex items-center"
             >
-              <Button variant={"underline"}>
+              <Button variant={"link"}>
                 Lets go
                 <MoveRight className="w-6 h-6 ml-2 " />
               </Button>
