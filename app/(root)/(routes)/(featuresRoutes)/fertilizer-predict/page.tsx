@@ -25,7 +25,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { crops } from "@/utils/crops";
 import FeaturesHeading from "@/components/FeaturesHeading";
 import { features } from "@/utils/features";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation as UseMutation } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -39,7 +39,7 @@ const formSchema = z.object({
 interface pageProps {}
 
 const page: FC<pageProps> = ({}) => {
-  const mutation = useMutation({
+  const mutation = UseMutation({
     mutationFn: (values: z.infer<typeof formSchema>) => {
       return axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}fertilizer-predict`,
