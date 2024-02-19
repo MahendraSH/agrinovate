@@ -33,7 +33,7 @@ import { z } from "zod";
 const formSchema = z.object({
   nitrogen: z.coerce.number().min(10).max(200),
   phosphorous: z.coerce.number().min(10).max(200),
-  potasium: z.coerce.number().min(10).max(200),
+  pottasium: z.coerce.number().min(10).max(200),
   ph: z.coerce.number().min(0).max(14),
   rainfall: z.coerce.number().min(5).max(2000),
   country: z.string().min(1),
@@ -67,7 +67,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
     defaultValues: {
       nitrogen: 0,
       phosphorous: 0,
-      potasium: 0,
+      pottasium: 0,
       ph: 0,
       rainfall: 0,
       country: selectedCountry,
@@ -168,7 +168,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
                       />
                       <FormField
                         control={form.control}
-                        name="potasium"
+                        name="pottasium"
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel>Potassium</FormLabel>
