@@ -33,7 +33,7 @@ import { z } from "zod";
 const formSchema = z.object({
   nitrogen: z.coerce.number().min(10).max(200),
   phosphorous: z.coerce.number().min(10).max(200),
-  potassium: z.coerce.number().min(10).max(200),
+  potasium: z.coerce.number().min(10).max(200),
   ph: z.coerce.number().min(0).max(14),
   rainfall: z.coerce.number().min(5).max(2000),
   country: z.string().min(1),
@@ -67,7 +67,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
     defaultValues: {
       nitrogen: 0,
       phosphorous: 0,
-      potassium: 0,
+      potasium: 0,
       ph: 0,
       rainfall: 0,
       country: selectedCountry,
@@ -85,9 +85,11 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     mutation.mutate(values);
+    console.log(values)
+
     if (mutation.isError) {
       toast.error(`${features[1].label} , Something went wrong !`);
-    } 
+    }
     if (mutation.isSuccess) {
       toast.success(`${features[1].label}, Form submitted successfully`);
     }
@@ -166,7 +168,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
                       />
                       <FormField
                         control={form.control}
-                        name="potassium"
+                        name="potasium"
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel>Potassium</FormLabel>
