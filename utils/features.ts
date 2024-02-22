@@ -19,7 +19,7 @@ export const features = [
   {
     id: 3,
 
-    link: "/fertilizer-predict",
+    link: "/disease-predict",
     label: "Plant Disease Prediction",
     herf: "/sys/PlantDisease.webp",
     description:
