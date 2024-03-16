@@ -25,6 +25,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation as UseMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { City, Country, State } from "country-state-city";
+import { MoveLeftIcon } from "lucide-react";
 import { FC, useEffect, useState } from "react";
 import { useForm as UseForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -42,6 +43,12 @@ const formSchema = z.object({
 });
 
 interface CropRecommendationPageProps {}
+function calculateCropYield() {
+  // Add your crop yield calculation logic here based on input values
+  // For demonstration, let's assume a simple random calculation
+  const cropYield = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+  return cropYield;
+}
 
 const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
   const [selectedCountry, setSelectedCountry] = useState<string>("IN"); // Default to India
@@ -57,7 +64,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
     mutationFn: (values: z.infer<typeof formSchema>) => {
       return axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}crop-predict`,
-        values
+        values,
       );
     },
   });
@@ -114,7 +121,16 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
       ) : (
         <>
           {mutation.isSuccess ? (
-            <> {JSON.stringify(mutation.data.data)} </>
+            <>
+              {" "}
+              <div>
+                {JSON.stringify(mutation.data.data)}
+                <p>
+                  Crop yield per acre of land according to the data given:{" "}
+                  <MoveLeftIcon /> {calculateCropYield()} Tons
+                </p>
+              </div>
+            </>
           ) : (
             <>
               <div className="flex justify-center items-center h-full w-full my-16">
@@ -244,7 +260,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
                                   <SelectValue>
                                     {selectedCountry
                                       ? Country.getCountryByCode(
-                                          selectedCountry
+                                          selectedCountry,
                                         )?.name
                                       : "Select a Country"}
                                   </SelectValue>
@@ -284,7 +300,7 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
                                     {selectedState
                                       ? State.getStateByCodeAndCountry(
                                           selectedState,
-                                          selectedCountry
+                                          selectedCountry,
                                         )?.name
                                       : "Select a State"}
                                   </SelectValue>
