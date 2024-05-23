@@ -122,13 +122,9 @@ const CropRecommendationPage: FC<CropRecommendationPageProps> = ({}) => {
         <>
           {mutation.isSuccess ? (
             <>
-              {" "}
-              <div>
-                {JSON.stringify(mutation.data.data)}
-                <p>
-                  Crop yield per acre of land according to the data given:{" "}
-                  <MoveLeftIcon /> {calculateCropYield()} Tons
-                </p>
+              <div className="text-2xl font-bold text-center mx-auto p-4">
+                {" "}
+                {mutation.data.data.prediction}
               </div>
             </>
           ) : (
