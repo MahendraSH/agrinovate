@@ -44,7 +44,7 @@ const FertilizerPredictionPage: FC<FertilizerPredictionPageProps> = ({}) => {
     mutationFn: (values: z.infer<typeof formSchema>) => {
       return axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}fertilizer-predict`,
-        values
+        values,
       );
     },
   });

@@ -4,8 +4,7 @@ export const features = [
     link: "/crop-predict",
     label: "Crop Recommendation",
     herf: "/sys/CropRecommendation.webp",
-    description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus asperiores autem esse beatae incidunt nesciunt ea nemo earum iusto exercitationem.z",
+    description: " Crop Recommendation using machine learning model",
   },
   {
     id: 2,
@@ -13,8 +12,7 @@ export const features = [
     link: "/fertilizer-predict",
     label: "Fertilizer Recommendation",
     herf: "/sys/FertilizerRecommendation.jpg",
-    description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus asperiores autem esse beatae incidunt nesciunt ea nemo earum iusto exercitationem.z",
+    description: "Fertilizer Recommendation using machine learning model",
   },
   {
     id: 3,
@@ -22,7 +20,6 @@ export const features = [
     link: "/disease-predict",
     label: "Plant Disease Prediction",
     herf: "/sys/PlantDisease.webp",
-    description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus asperiores autem esse beatae incidunt nesciunt ea nemo earum iusto exercitationem.z",
+    description: "Plant Disease Prediction using machine learning model",
   },
 ];
